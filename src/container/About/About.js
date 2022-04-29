@@ -41,7 +41,7 @@ function About() {
             with the projects carried out.
           </p>
 
-          <a href="#contact" class="button">Contact Me</a>
+          <a href="#contact" className="button">Contact Me</a>
         </div>
 
       </div>

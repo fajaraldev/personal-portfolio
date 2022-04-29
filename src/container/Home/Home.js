@@ -33,7 +33,7 @@ function Home() {
 
         <div className="home__social">
           {socials.map((social, i) => (
-            <a key={social} href={social.link} target="_blank" rel='noreferrer'>
+            <a key={i} href={social.link} target="_blank" rel='noreferrer'>
               {social.icon}
             </a>
           ))}
