@@ -1,6 +1,6 @@
 import React from 'react';
 import { Navbar } from './components';
-import { Home, About } from './container';
+import { Home, About, Skills, Services } from './container';
 
 
 import './App.scss';
@@ -8,10 +8,12 @@ import './App.scss';
 function App() {
   return (
     <>
-      <Navbar />
+      {/* <Navbar /> */}
       <div className="main">
         <Home/>
         <About/>
+        <Skills/>
+        <Services/>
       </div>
     </>
   );
