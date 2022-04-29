@@ -1,6 +1,6 @@
 import React from 'react';
 import { Navbar } from './components';
-import { Home } from './container';
+import { Home, About } from './container';
 
 
 import './App.scss';
@@ -11,6 +11,7 @@ function App() {
       <Navbar />
       <div className="main">
         <Home/>
+        <About/>
       </div>
     </>
   );

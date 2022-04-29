@@ -20,7 +20,7 @@ function Home() {
           <h3 className="home__education">Frontend Developer</h3>
 
           <div className="home__buttons">
-            <a download="JavaScript:void(0)" href="JavaScript:void(0)" className="button button--ghost">
+            <a href="#" className="button button--ghost">
               Download CV
             </a>
             <a href="#about" className="button">About Me</a>
@@ -33,7 +33,7 @@ function Home() {
 
         <div className="home__social">
           {socials.map((social, i) => (
-            <a href={social.link} target="_blank" rel='noreferrer'>
+            <a key={social} href={social.link} target="_blank" rel='noreferrer'>
               {social.icon}
             </a>
           ))}
