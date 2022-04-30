@@ -1,5 +1,5 @@
 import React from "react";
-import AppWrap from "../../wrapper/AppWrap";
+import { AppWrap } from "../../wrapper";
 
 import { HiBadgeCheck } from "react-icons/hi";
 import "./Skills.scss";

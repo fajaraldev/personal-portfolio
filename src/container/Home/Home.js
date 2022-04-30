@@ -1,6 +1,6 @@
 import React from 'react'
 import { FaLinkedin, FaDribbbleSquare, FaGithub, FaMouse } from 'react-icons/fa';
-import AppWrap from '../../wrapper/AppWrap';
+import { AppWrap } from '../../wrapper';
 
 import { images } from '../../constants';
 import './Home.scss';

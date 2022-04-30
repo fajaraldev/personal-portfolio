@@ -1,5 +1,5 @@
 import React from "react";
-import AppWrap from "../../wrapper/AppWrap";
+import { AppWrap } from "../../wrapper";
 import { BiBriefcase, BiSupport, BiAward } from "react-icons/bi";
 
 import { images } from "../../constants";
