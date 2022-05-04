@@ -24,13 +24,11 @@ function Work() {
 
   function handleWorkFilter(item) {
     setActiveFilter(item);
-    setTimeout(() => {
-      if (item === 'All') {
-        setFilterwork(works);
-      } else {
-        setFilterwork(works.filter((work) => work.tags.includes(item)));
-      }
-    }, 500);
+    if (item === 'All') {
+      setFilterwork(works);
+    } else {
+      setFilterwork(works.filter((work) => work.tags.includes(item)));
+    }
   }
 
   return (
