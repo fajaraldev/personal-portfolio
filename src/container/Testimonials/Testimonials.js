@@ -1,14 +1,14 @@
-import React from 'react';
-import { AppWrap } from '../../wrapper';
-import { Swiper, SwiperSlide } from 'swiper/react';
+import React, {useState, useEffect} from "react";
+import { AppWrap } from "../../wrapper";
+import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination } from "swiper";
 
-import { images } from '../../constants';
-import 'swiper/css';
-import 'swiper/css/pagination';
-import './Testimonials.scss';
+import { images } from "../../constants";
+import "swiper/css";
+import "swiper/css/pagination";
+import "./Testimonials.scss";
 
-const testimonials = [
+const testimonialsData = [
   {
     name: "Jamie Harisson", imgUrl: images.testimonial1,
     description: "A really good job, all aspects of the project were followed step by step and with good results."
@@ -24,6 +24,12 @@ const testimonials = [
 ]
 
 function Testimonials() {
+  const [testimonials, setTestimonials] = useState([]);
+
+  useEffect(() => {
+    setTestimonials(testimonialsData)
+  }, [])
+
   return (
     <>
       <span className="section__subtitle">My Client Say</span>
@@ -50,14 +56,14 @@ function Testimonials() {
           modules={[Pagination]}
           className="testimonial__container container"
         >
-          {testimonials.map((item, index) => (
+          {testimonials.map((testimonial, index) => (
             <SwiperSlide
               className="testimonial__card"
               key={index}
             >
-              <img src={item.imgUrl} alt={item.name} />
-              <h3>{item.name}</h3>
-              <p>{item.description}</p>
+              <img src={testimonial.imgUrl} alt={testimonial.name} />
+              <h3>{testimonial.name}</h3>
+              <p>{testimonial.description}</p>
             </SwiperSlide>
           ))}
         </Swiper>
@@ -66,4 +72,4 @@ function Testimonials() {
   )
 }
 
-export default AppWrap(Testimonials);
+export default AppWrap(Testimonials, "testimonials");

@@ -1,45 +1,51 @@
-import React from "react";
+import React, {useState, useEffect} from "react";
 import { AppWrap } from "../../wrapper";
-import { Service } from '../../components';
+import { ServicesCard } from "../../components";
 
-import './Services.scss';
+import "./Services.scss";
+
+const dataServices = [
+  {
+    title: "Product Designer",
+    description: "Service with more than 1 years of experience. Providing quality work to clients and companies.",
+    offers: [
+      "I Develop the user interface.",
+      "Web page development.",
+      "I create ux element interactions.",
+      "I Position your company brand.",
+      "Design and mockups of product for companies.",
+    ]
+  },
+  {
+    title: "UI/UX Designer",
+    description: "Service with more than 1 years of experience. Providing quality work to clients and companies.",
+    offers: [
+      "I Develop the user interface.",
+      "Web page development.",
+      "I create ux element interactions.",
+      "I Position your company brand.",
+      "Design and mockups of product for companies.",
+    ]
+  },
+  {
+    title: "Visual Designer",
+    description: "Service with more than 1 years of experience. Providing quality work to clients and companies.",
+    offers: [
+      "I Develop the user interface.",
+      "Web page development.",
+      "I create ux element interactions.",
+      "I Position your company brand.",
+      "Design and mockups of product for companies.",
+    ]
+  },
+]
 
 function Services() {
-  const services = [
-    {
-      title: "Product Designer",
-      description: "Service with more than 1 years of experience. Providing quality work to clients and companies.",
-      offers: [
-        "I Develop the user interface.",
-        "Web page development.",
-        "I create ux element interactions.",
-        "I Position your company brand.",
-        "Design and mockups of product for companies.",
-      ]
-    },
-    {
-      title: "UI/UX Designer",
-      description: "Service with more than 1 years of experience. Providing quality work to clients and companies.",
-      offers: [
-        "I Develop the user interface.",
-        "Web page development.",
-        "I create ux element interactions.",
-        "I Position your company brand.",
-        "Design and mockups of product for companies.",
-      ]
-    },
-    {
-      title: "Visual Designer",
-      description: "Service with more than 1 years of experience. Providing quality work to clients and companies.",
-      offers: [
-        "I Develop the user interface.",
-        "Web page development.",
-        "I create ux element interactions.",
-        "I Position your company brand.",
-        "Design and mockups of product for companies.",
-      ]
-    },
-  ]
+  const [services, setServices] = useState([]);
+
+  useEffect(() => {
+    setServices(dataServices)
+  }, []);
 
   return (
     <>
@@ -48,7 +54,10 @@ function Services() {
 
       <div className="services__container container grid">
         {services.map((service, i) => (
-          <Service key={i} {...service}/>
+          <ServicesCard
+            key={i}
+            {...service}
+          />
         ))}
       </div>
     </>

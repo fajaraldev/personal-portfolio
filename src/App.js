@@ -1,5 +1,5 @@
-import React from 'react';
-import { Navbar } from './components';
+import React from "react";
+import { Navbar } from "./components";
 import {
   Home,
   About,
@@ -9,15 +9,16 @@ import {
   Testimonials,
   Contact,
   Footer
-} from './container';
+} from "./container";
 
 
-import './App.scss';
+import "./App.scss";
 
 function App() {
   return (
     <>
-      {/* <Navbar /> */}
+      <Navbar />
+
       <div className="main">
         <Home/>
         <About/>

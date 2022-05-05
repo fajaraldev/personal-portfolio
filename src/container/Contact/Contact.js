@@ -1,9 +1,9 @@
-import React from 'react'
-import { AppWrap } from '../../wrapper';
-import { MdOutlineAttachEmail } from 'react-icons/md';
+import React from "react";
+import { AppWrap } from "../../wrapper";
+import { MdOutlineAttachEmail } from "react-icons/md";
 import { BsArrowRight, BsWhatsapp, BsInstagram } from "react-icons/bs";
 
-import './Contact.scss';
+import "./Contact.scss";
 
 function Contact() {
   return (
@@ -20,24 +20,36 @@ function Contact() {
               <MdOutlineAttachEmail className="contact__card-icon" />
               <h3>Email</h3>
               <span>fajarghifar3@gmail.com</span>
-              <a href="mailto:fajarghifari3@gmail.com" target="_blank" rel="noreferrer">
-                Write Me <BsArrowRight className='contact__button-icon' />
+              <a
+                href="mailto:fajarghifari3@gmail.com"
+                target="_blank"
+                rel="noreferrer"
+              >
+                Write Me <BsArrowRight className="contact__button-icon" />
               </a>
             </div>
             <div>
               <BsWhatsapp className="contact__card-icon" />
               <h3>Whatsapp</h3>
               <span>+62 818-0463-6624</span>
-              <a href="https://api.whatsapp.com/send?phone=6281804636624&text=Hello, more information!" target="_blank" rel="noreferrer">
-                Write Me <BsArrowRight className='contact__button-icon' />
+              <a
+                href="https://api.whatsapp.com/send?phone=6281804636624&text=Hello, more information!"
+                target="_blank"
+                rel="noreferrer"
+              >
+                Write Me <BsArrowRight className="contact__button-icon" />
               </a>
             </div>
             <div>
               <BsInstagram className="contact__card-icon" />
               <h3>Direct Message</h3>
               <span>fajarghifar</span>
-              <a href="https://instagram.com/fajarghifar" target="_blank" rel="noreferrer">
-                Write Me <BsArrowRight className='contact__button-icon' />
+              <a
+                href="https://instagram.com/fajarghifar"
+                target="_blank"
+                rel="noreferrer"
+              >
+                Write Me <BsArrowRight className="contact__button-icon" />
               </a>
             </div>
           </div>
@@ -48,19 +60,53 @@ function Contact() {
           {/* form contact */}
           <form className="contact__form">
             <div className="contact__form-div">
-              <label className="contact__form-tag" htmlFor="name">Names</label>
-              <input className="contact__form-input" type="text" name="name" placeholder="Insert your name" />
+              <label
+                className="contact__form-tag"
+                htmlFor="name"
+              >
+                Names
+              </label>
+              <input
+                className="contact__form-input"
+                type="text" name="name"
+                placeholder="Insert your name"
+              />
             </div>
             <div className="contact__form-div">
-              <label className="contact__form-tag" htmlFor="email">Email</label>
-              <input className="contact__form-input" type="email" name="email" placeholder="Insert your email" />
+              <label
+                className="contact__form-tag"
+                htmlFor="email"
+              >
+                Email
+              </label>
+              <input
+                className="contact__form-input"
+                type="email"
+                name="email"
+                placeholder="Insert your email"
+              />
             </div>
             <div className="contact__form-div contact__form-area">
-              <label className="contact__form-tag" htmlFor="message">Project</label>
-              <textarea className="contact__form-input" name="message" cols="30" rows="10" placeholder="Write your project"/>
+              <label
+                className="contact__form-tag"
+                htmlFor="message"
+              >
+                Project
+              </label>
+              <textarea
+                className="contact__form-input"
+                name="message"
+                cols="30"
+                rows="10"
+                placeholder="Write your project"
+              />
             </div>
 
-            <button type="submit" className="button">Send Message</button>
+            <button
+              className="button"
+              type="submit">
+              Send Message
+            </button>
           </form>
         </div>
       </div>
@@ -68,4 +114,4 @@ function Contact() {
   )
 }
 
-export default AppWrap(Contact, 'contact');
+export default AppWrap(Contact, "contact");

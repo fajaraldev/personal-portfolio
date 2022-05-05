@@ -1,11 +1,11 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 import { AppWrap } from '../../wrapper';
 import { BsInstagram, BsTwitter, BsFacebook } from 'react-icons/bs';
 import { FaBlogger } from 'react-icons/fa';
 
 import './Footer.scss';
 
-const footerLink = [
+const dataLinks = [
   {
     link: "#about",
     name: "About"
@@ -20,42 +20,56 @@ const footerLink = [
   },
 ]
 
-const footerSocial = [
+const dataSocials = [
   {
     name: "Instagram",
-    link: 'https://www.instagram.com/fajarghifar', icon: BsInstagram
+    link: 'https://www.instagram.com/fajarghifar',
+    Icon: <BsInstagram/>
   },
   {
     name: "Facebook",
-    link: '#', icon: BsFacebook
+    link: '#',
+    Icon: <BsFacebook/>
   },
   {
     name: "Twitter",
-    link: 'https://twitter.com/Fajaralg', icon: BsTwitter
+    link: 'https://twitter.com/Fajaralg',
+    Icon: <BsTwitter/>
   },
   {
     name: "Blogger",
-    link: 'https://fajaral.com/', icon: FaBlogger
+    link: 'https://fajaral.com/',
+    Icon: <FaBlogger/>
   },
 ]
 
 function Footer() {
+  const [links, setLinks] = useState([]);
+  const [socials, setSocials] = useState([]);
+
+  useEffect(() => {
+    setLinks(dataLinks);
+    setSocials(dataSocials);
+  }, [])
+
   return (
     <div className="footer__container container">
       <h1 className="footer__title">FajaralDev</h1>
 
       <ul className="footer__list">
-        {footerLink.map((item, index) => (
+        {links.map((link, index) => (
           <li key={index}>
-            <a href={item.link}>{ item.name }</a>
+            <a href={link.link}>{ link.name }</a>
           </li>
         ))}
       </ul>
 
       <ul className="footer__social">
-        {footerSocial.map((item, index) => (
-          <a href={ item.link } key={index}>
-            <item.icon/>
+        {socials.map((social, index) => (
+          <a
+            href={social.link} key={index}
+          >
+            { social.Icon }
           </a>
         ))}
       </ul>

@@ -6,27 +6,27 @@
 
 .home__data {
   text-align: center;
+}
 
-  .home__greeting,
-  .home__education {
-    font-size: var(--small-font-size);
-    font-weight: var(--font-medium);
-  }
+.home__greeting,
+.home__education {
+  font-size: var(--small-font-size);
+  font-weight: var(--font-medium);
+}
 
-  .home__greeting {
-    display: block;
-    color: var(--title-color);
-    margin-bottom: .25rem;
-  }
+.home__greeting {
+  display: block;
+  color: var(--title-color);
+  margin-bottom: .25rem;
+}
 
-  .home__education {
-    color: var(--text-color);
-    margin-bottom: 2.5rem;
-  }
+.home__education {
+  color: var(--text-color);
+  margin-bottom: 2.5rem;
+}
 
-  .home__name {
-    font-size: var(--biggest-font-size);
-  }
+.home__name {
+  font-size: var(--biggest-font-size);
 }
 
 .home__buttons {
@@ -96,13 +96,48 @@
   display: grid;
   row-gap: 2.25rem;
   justify-items: center;
+}
 
-  .home__scroll-icon {
-    font-size: 1.25rem;
+.home__scroll-icon {
+  font-size: 1.25rem;
+}
+
+.home__scroll-name {
+  font-size: var(--smaller-font-size);
+  transform: rotate(-90deg);
+}
+
+/* For small devices */
+@media screen and (max-width: 320px) {
+  .home__buttons {
+    flex-direction: column;
   }
 
-  .home__scroll-name {
-    font-size: var(--smaller-font-size);
-    transform: rotate(-90deg);
+  .home__handle {
+    width: 150px;
+    height: 253px;
+  }
+}
+
+/* For large devices */
+@media screen and (min-width: 992px) {
+  .home__handle {
+    width: 290px;
+    height: 400px;
+  }
+
+  .home__social{
+    a {
+      padding: .4rem;
+      font-size: 1.25rem;
+    }
+
+    &::after {
+      transform: rotate(90deg) translate(16px, 0);
+    }
+  }
+
+  .home__scroll-icon {
+    font-size: 2rem;
   }
 }

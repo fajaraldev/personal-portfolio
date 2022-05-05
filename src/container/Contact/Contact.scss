@@ -96,3 +96,33 @@
 .contact__form-area textarea {
   resize: none;
 }
+
+
+/* For medium devices */
+@media screen and (min-width: 576px) {
+  .contact__info {
+    grid-template-columns: 300px;
+    justify-content: center;
+  }
+
+  .contact__form {
+    width: 360px;
+    margin: 0 auto;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .contact__container {
+    grid-template-columns: repeat(2, max-content);
+    justify-content: center;
+    column-gap: 3rem;
+  }
+}
+
+
+/* For large devices */
+@media screen and (min-width: 992px) {
+  .contact__container {
+    column-gap: 6rem;
+  }
+}

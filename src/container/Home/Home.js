@@ -1,29 +1,47 @@
-import React from 'react'
-import { FaLinkedin, FaDribbbleSquare, FaGithub, FaMouse } from 'react-icons/fa';
-import { AppWrap } from '../../wrapper';
+import React, {useState, useEffect} from "react";
+import {
+  FaLinkedin, FaDribbbleSquare, FaGithub,
+  FaMouse
+} from "react-icons/fa";
+import { AppWrap } from "../../wrapper";
 
-import { images } from '../../constants';
-import './Home.scss';
+import { images } from "../../constants";
+import "./Home.scss";
+
+const dataSocials = [
+  {
+    link: "https://www.linkedin.com/in/fajaralg/",
+    Icon: <FaLinkedin />
+  },
+  {
+    link: "https://github.com/fajaraldev",
+    Icon: <FaGithub />
+  },
+  {
+    link: "#",
+    Icon: <FaDribbbleSquare />
+  }
+]
 
 function Home() {
-  const socials = [
-    { link: 'https://www.linkedin.com/in/fajaralg/', icon: <FaLinkedin /> },
-    { link: 'https://github.com/fajaraldev', icon: <FaGithub/> },
-    { link: '#', icon: <FaDribbbleSquare/> }
-  ]
+  const [socials, setSocials] = useState([]);
+
+  useEffect(() => {
+    setSocials(dataSocials)
+  }, []);
 
   return (
       <div className="home__container container grid">
         <div className="home__data">
-          <span className="home__greeting">Hello, I'm</span>
+          <span className="home__greeting">Hello, I"m</span>
           <h1 className="home__name">Fajar Ghifari Nugroho</h1>
           <h3 className="home__education">Frontend Developer</h3>
 
           <div className="home__buttons">
-            <a href="#" className="button button--ghost">
+            <a className="button button--ghost" href="#">
               Download CV
             </a>
-            <a href="#about" className="button">About Me</a>
+            <a className="button" href="#about">About Me</a>
           </div>
         </div>
 
@@ -33,8 +51,10 @@ function Home() {
 
         <div className="home__social">
           {socials.map((social, i) => (
-            <a key={i} href={social.link} target="_blank" rel='noreferrer'>
-              {social.icon}
+            <a
+              key={i}
+              href={social.link} target="_blank" rel="noreferrer">
+              {social.Icon}
             </a>
           ))}
         </div>
@@ -47,4 +67,4 @@ function Home() {
   )
 }
 
-export default AppWrap(Home, 'home');
+export default AppWrap(Home, "home");
