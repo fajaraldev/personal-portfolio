@@ -53,32 +53,34 @@ function Footer() {
   }, [])
 
   return (
-    <div className="footer__container container">
-      <h1 className="footer__title">FajaralDev</h1>
+    <footer className="footer">
+      <div className="container footer__container">
+        <h1 className="footer__title">FajaralDev</h1>
 
-      <ul className="footer__list">
-        {links.map((link, index) => (
-          <li key={index}>
-            <a href={link.link}>{ link.name }</a>
-          </li>
-        ))}
-      </ul>
+        <ul className="footer__list">
+          {links.map((link, index) => (
+            <li key={index}>
+              <a href={link.link}>{ link.name }</a>
+            </li>
+          ))}
+        </ul>
 
-      <ul className="footer__social">
-        {socials.map((social, index) => (
-          <a
-            href={social.link} key={index}
-          >
-            { social.Icon }
-          </a>
-        ))}
-      </ul>
+        <ul className="footer__social">
+          {socials.map((social, index) => (
+            <a
+              href={social.link} key={index}
+            >
+              { social.Icon }
+            </a>
+          ))}
+        </ul>
 
-      <span className="footer__copy">
-        &#169; Fajaraldev. All rigths reserved
-      </span>
-    </div>
+        <span className="footer__copy">
+          &#169; Fajaraldev. All rigths reserved
+        </span>
+      </div>
+    </footer>
   )
 }
 
-export default AppWrap(Footer, 'footer');
+export default Footer;

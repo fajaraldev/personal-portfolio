@@ -44,7 +44,7 @@ function Skills() {
       <span className="section__subtitle">My Abilities</span>
       <h2 className="section__title">My Experience</h2>
 
-      <div className="skills__container container grid">
+      <div className="container grid skills__container">
         {skills.map((skill, index) => (
           <div
             className="skills__content"

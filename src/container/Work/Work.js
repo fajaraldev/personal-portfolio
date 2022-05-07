@@ -1,4 +1,5 @@
-import React from "react";
+import React, {useState, useEffect} from "react";
+import { motion } from 'framer-motion';
 import { AppWrap } from "../../wrapper"
 
 import { BsArrowRight } from "react-icons/bs";
@@ -23,22 +24,29 @@ const dataWorks = [
 ]
 
 function Work() {
-  const [activeFilter, setActiveFilter] = React.useState("All");
-  const [works, setWorks] = React.useState([]);
-  const [filterwork, setFilterwork] = React.useState([]);
+  const [activeFilter, setActiveFilter] = useState("All");
+  const [works, setWorks] = useState([]);
+  const [filterwork, setFilterwork] = useState([]);
+  const [animateCard, setAnimateCard] = useState({ y: 0, opacity: 1 });
 
-  React.useEffect(() => {
+  useEffect(() => {
     setWorks(dataWorks);
     setFilterwork(dataWorks);
   }, []);
 
   function handleWorkFilter(item) {
     setActiveFilter(item);
-    if (item === "All") {
-      setFilterwork(works);
-    } else {
-      setFilterwork(works.filter((work) => work.tags.includes(item)));
-    }
+    setAnimateCard([{ y: 100, opacity: 0 }]);
+
+    setTimeout(() => {
+      setAnimateCard([{ y: 0, opacity: 1 }]);
+
+      if (item === "All") {
+        setFilterwork(works);
+      } else {
+        setFilterwork(works.filter((work) => work.tags.includes(item)));
+      }
+    }, 500);
   }
 
   return (
@@ -58,14 +66,20 @@ function Work() {
         ))}
       </div>
 
-      <div className="work__container container grid">
+      <motion.div
+        animate={animateCard}
+        transition={{ duration: 0.5, delayChildren: 0.5 }}
+        className="container grid work__container"
+      >
         {filterwork.map((work, index) => (
           <div
             className="work__card"
             key={index}
           >
-            <img src={work.imgUrl} alt={work.title}/>
-
+            <img
+              src={work.imgUrl}
+              alt={work.title}
+            />
             <h3>{work.title}</h3>
             <a
               href={work.projectLink}
@@ -76,7 +90,7 @@ function Work() {
             </a>
           </div>
         ))}
-      </div>
+      </motion.div>
     </>
   )
 }

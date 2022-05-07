@@ -31,9 +31,9 @@ function Home() {
   }, []);
 
   return (
-      <div className="home__container container grid">
+      <div className="container grid home__container">
         <div className="home__data">
-          <span className="home__greeting">Hello, I"m</span>
+          <span className="home__greeting">Hello, I'm</span>
           <h1 className="home__name">Fajar Ghifari Nugroho</h1>
           <h3 className="home__education">Frontend Developer</h3>
 

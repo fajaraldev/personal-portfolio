@@ -52,7 +52,7 @@ function Services() {
       <span className="section__subtitle">My Services</span>
       <h2 className="section__title">What I Offer</h2>
 
-      <div className="services__container container grid">
+      <div className="container grid services__container">
         {services.map((service, i) => (
           <ServicesCard
             key={i}

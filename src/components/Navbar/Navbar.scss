@@ -34,6 +34,11 @@
   }
 }
 
+/* Change background header */
+.scroll-header {
+  box-shadow: 0 4px 4px hsla(0, 0%, 4%, .3);
+}
+
 @media screen and (min-width: 992px) {
   .nav__container {
     height: calc(var(--header-height) + 1rem);

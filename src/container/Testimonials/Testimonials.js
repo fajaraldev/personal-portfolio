@@ -35,7 +35,7 @@ function Testimonials() {
       <span className="section__subtitle">My Client Say</span>
       <h2 className="section__title">Testimonials</h2>
 
-      <div className="testimonial__container container">
+      <div className="container testimonial__container">
         <Swiper
           slidesPerView={1}
           spaceBetween={24}

@@ -11,7 +11,7 @@ function About() {
       <span className="section__subtitle">My Intro</span>
       <h2 className="section__title">About Me</h2>
 
-      <div className="about__container container grid">
+      <div className="container grid about__container ">
         <img src={images.about} alt="profile" />
 
         <div className="about__data">

@@ -11,7 +11,7 @@ function Contact() {
       <span className="section__subtitle">Get in Touch</span>
       <h2 className="section__title">Contact Me</h2>
 
-      <div className="contact__container container grid">
+      <div className="container grid contact__container">
         <div className="contact__content">
           <h3 className="contact__title">Talk to Me</h3>
           {/* contact card */}
