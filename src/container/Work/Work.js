@@ -1,27 +1,10 @@
 import React, {useState, useEffect} from "react";
 import { motion } from 'framer-motion';
 import { AppWrap } from "../../wrapper"
+import { client, urlFor } from "../../client";
 
 import { BsArrowRight } from "react-icons/bs";
-import { images } from "../../constants";
 import "./Work.scss";
-
-const dataWorks = [
-  {
-    title: "Ex 1",
-    imgUrl: images.project1, projectLink: "#",
-    tags: ["All", "Web"]
-  },
-  {
-    title: "Ex 2",
-    imgUrl: images.project2, projectLink: "#",
-    tags: ["All", "Design"]
-  },
-  {
-    title: "Ex 3",
-    imgUrl: images.project3, projectLink: "#", tags: ["All", "Mobile"]
-  },
-]
 
 function Work() {
   const [activeFilter, setActiveFilter] = useState("All");
@@ -30,8 +13,13 @@ function Work() {
   const [animateCard, setAnimateCard] = useState({ y: 0, opacity: 1 });
 
   useEffect(() => {
-    setWorks(dataWorks);
-    setFilterwork(dataWorks);
+    const query = '*[_type == "works"]';
+
+    client.fetch(query)
+      .then((data) => {
+        setWorks(data);
+        setFilterwork(data);
+      })
   }, []);
 
   function handleWorkFilter(item) {
@@ -77,7 +65,7 @@ function Work() {
             key={index}
           >
             <img
-              src={work.imgUrl}
+              src={urlFor(work.imgUrl)}
               alt={work.title}
             />
             <h3>{work.title}</h3>

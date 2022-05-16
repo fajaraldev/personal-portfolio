@@ -1,50 +1,21 @@
 import React, {useState, useEffect} from "react";
 import { AppWrap } from "../../wrapper";
 import { ServicesCard } from "../../components";
+import { client } from "../../client";
 
 import "./Services.scss";
 
-const dataServices = [
-  {
-    title: "Product Designer",
-    description: "Service with more than 1 years of experience. Providing quality work to clients and companies.",
-    offers: [
-      "I Develop the user interface.",
-      "Web page development.",
-      "I create ux element interactions.",
-      "I Position your company brand.",
-      "Design and mockups of product for companies.",
-    ]
-  },
-  {
-    title: "UI/UX Designer",
-    description: "Service with more than 1 years of experience. Providing quality work to clients and companies.",
-    offers: [
-      "I Develop the user interface.",
-      "Web page development.",
-      "I create ux element interactions.",
-      "I Position your company brand.",
-      "Design and mockups of product for companies.",
-    ]
-  },
-  {
-    title: "Visual Designer",
-    description: "Service with more than 1 years of experience. Providing quality work to clients and companies.",
-    offers: [
-      "I Develop the user interface.",
-      "Web page development.",
-      "I create ux element interactions.",
-      "I Position your company brand.",
-      "Design and mockups of product for companies.",
-    ]
-  },
-]
 
 function Services() {
   const [services, setServices] = useState([]);
 
   useEffect(() => {
-    setServices(dataServices)
+    const query = '*[_type == "services"]';
+
+    client.fetch(query)
+      .then((data) => {
+        setServices(data);
+      });
   }, []);
 
   return (

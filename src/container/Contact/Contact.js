@@ -14,7 +14,6 @@ function Contact() {
       <div className="container grid contact__container">
         <div className="contact__content">
           <h3 className="contact__title">Talk to Me</h3>
-          {/* contact card */}
           <div className="contact__info">
             <div>
               <MdOutlineAttachEmail className="contact__card-icon" />
@@ -57,7 +56,6 @@ function Contact() {
 
         <div className="contact__content">
           <h3 className="contact__title">Write me Your Project</h3>
-          {/* form contact */}
           <form className="contact__form">
             <div className="contact__form-div">
               <label
@@ -68,7 +66,8 @@ function Contact() {
               </label>
               <input
                 className="contact__form-input"
-                type="text" name="name"
+                type="text"
+                name="name"
                 placeholder="Insert your name"
               />
             </div>
@@ -104,7 +103,8 @@ function Contact() {
 
             <button
               className="button"
-              type="submit">
+              type="submit"
+            >
               Send Message
             </button>
           </form>

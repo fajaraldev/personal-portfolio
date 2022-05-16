@@ -2,33 +2,23 @@ import React, {useState, useEffect} from "react";
 import { AppWrap } from "../../wrapper";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination } from "swiper";
+import { client, urlFor } from "../../client";
 
-import { images } from "../../constants";
 import "swiper/css";
 import "swiper/css/pagination";
 import "./Testimonials.scss";
-
-const testimonialsData = [
-  {
-    name: "Jamie Harisson", imgUrl: images.testimonial1,
-    description: "A really good job, all aspects of the project were followed step by step and with good results."
-  },
-  {
-    name: "Paula Vusy", imgUrl: images.testimonial2,
-    description: "A really good job, all aspects of the project were followed step by step and with good results."
-  },
-  {
-    name: "Sara Chil", imgUrl: images.testimonial3,
-    description: "A really good job, all aspects of the project were followed step by step and with good results."
-  },
-]
 
 function Testimonials() {
   const [testimonials, setTestimonials] = useState([]);
 
   useEffect(() => {
-    setTestimonials(testimonialsData)
-  }, [])
+    const query = '*[_type == "testimonials"]';
+
+    client.fetch(query)
+      .then((data) => {
+        setTestimonials(data)
+      })
+  }, []);
 
   return (
     <>
@@ -61,9 +51,9 @@ function Testimonials() {
               className="testimonial__card"
               key={index}
             >
-              <img src={testimonial.imgUrl} alt={testimonial.name} />
+              <img src={urlFor(testimonial.imgUrl)} alt={testimonial.name} />
               <h3>{testimonial.name}</h3>
-              <p>{testimonial.description}</p>
+              <p>{testimonial.feedback}</p>
             </SwiperSlide>
           ))}
         </Swiper>
