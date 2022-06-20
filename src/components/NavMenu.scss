@@ -8,37 +8,38 @@
   backdrop-filter: blur(10px);
   transition: .4s;
   /* for light mode animation */
+}
 
-  ul {
+.nav__list {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  a {
+    color: var(--text-color);
+    font-size: 1.25rem;
+    padding: .4rem;
     display: flex;
-    justify-content: space-between;
-    align-items: center;
+    border-radius: 5rem;
 
-    a {
-      color: var(--text-color);
-      font-size: 1.25rem;
-      padding: .4rem;
-      display: flex;
-      border-radius: 5rem;
-
-      &:hover {
-        background: linear-gradient(180deg,
-            hsla(var(--first-hue), var(--sat), var(--lig), 1),
-            hsla(var(--first-hue), var(--sat), var(--lig), .2));
-        box-shadow: 0 0 16px hsla(var(--first-hue), var(--sat), var(--lig), .4);
-        color: var(--title-color);
-      }
+    &:hover {
+      background: linear-gradient(180deg,
+          hsla(var(--first-hue), var(--sat), var(--lig), 1),
+          hsla(var(--first-hue), var(--sat), var(--lig), .2));
+      box-shadow: 0 0 16px hsla(var(--first-hue), var(--sat), var(--lig), .4);
+      color: var(--title-color);
     }
   }
 }
 
-// .active-link {
-//   background: linear-gradient(180deg,
-//       hsla(var(--first-hue), var(--sat), var(--lig), 1),
-//       hsla(var(--first-hue), var(--sat), var(--lig), .2));
-//   box-shadow: 0 0 16px hsla(var(--first-hue), var(--sat), var(--lig), .4);
-//   color: var(--title-color);
-// }
+.active-link {
+  border-radius: 5rem;
+  background: linear-gradient(180deg,
+      hsla(var(--first-hue), var(--sat), var(--lig), 1),
+      hsla(var(--first-hue), var(--sat), var(--lig), .2));
+  box-shadow: 0 0 16px hsla(var(--first-hue), var(--sat), var(--lig), .4);
+  color: var(--title-color);
+}
 
 /* For small devices */
 @media screen and (max-width: 320px) {
